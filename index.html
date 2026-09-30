@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор госпошлины в суд 2026 - общая юрисдикция и арбитраж</title>
+<meta name="description" content="Бесплатный калькулятор госпошлины для юристов: суды общей юрисдикции (ст. 333.19 НК РФ) и арбитражные суды (ст. 333.21 НК РФ), иски, судебные приказы, жалобы. Расчёт по шагам со ссылкой на статью.">
+<meta name="keywords" content="госпошлина, калькулятор госпошлины, госпошлина в суд, 333.19 НК РФ, 333.21 НК РФ, арбитражный суд, цена иска">
+<link rel="canonical" href="https://kalkulyator-yurista.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор госпошлины в суд - общая юрисдикция и арбитраж">
+<meta property="og:description" content="Сумма пошлины по цене иска, расчёт по шагам и ссылка на статью НК РФ. Бесплатно, без регистрации.">
+<meta property="og:url" content="https://kalkulyator-yurista.github.io/">
+<link rel="stylesheet" href="style.css">
+<style>
+  .nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--tx);text-decoration:none;font-size:14px}
+  .nav a.on{background:var(--ac);color:var(--ac-ink);border-color:var(--ac)}
+  .sum{font-size:38px;font-weight:700;letter-spacing:-.5px;margin:4px 0}
+  .calc-steps{background:var(--surface-2);border-radius:var(--r-sm);padding:12px 14px;margin:12px 0;font-size:14px;line-height:1.5}
+  footer.foot a{color:var(--mut);text-decoration:underline}
+  .err{color:var(--bad)}
+</style>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Калькулятор госпошлины в суд","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"},"description":"Госпошлина в суды общей юрисдикции и арбитражные суды по статьям 333.19 и 333.21 НК РФ." }
+</script>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <span class="badge">НК РФ в редакции на 1 сентября 2026</span>
+    <h1>Калькулятор госпошлины в суд</h1>
+    <p class="lead">Выберите суд и вид требования, введите цену иска - получите сумму, расчёт по шагам и ссылку на подпункт статьи. Без регистрации, расчёт идёт в вашем браузере.</p>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="nav">
+    <a class="on" href="./">Госпошлина</a>
+    <a href="drobi.html">Калькулятор дробей</a>
+  </nav>
+<div class="layout">
+  <div>
+    <form name="calc" class="card" autocomplete="off" onsubmit="return false">
+      <h2>Что подаём</h2>
+      <label for="court">Суд</label>
+      <select id="court">
+        <option value="sou">Общей юрисдикции / мировой судья (ст. 333.19 НК РФ)</option>
+        <option value="arb">Арбитражный суд (ст. 333.21 НК РФ)</option>
+      </select>
+
+      <label for="kind">Вид требования</label>
+      <select id="kind"></select>
+
+      <div class="grid2">
+        <div id="partyRow">
+          <label for="party">Заявитель</label>
+          <select id="party">
+            <option value="f">Физическое лицо</option>
+            <option value="o">Организация</option>
+          </select>
+        </div>
+        <div id="priceRow">
+          <label for="price">Цена иска, ₽</label>
+          <input id="price" type="text" inputmode="decimal" value="1 500 000">
+        </div>
+      </div>
+      <p class="hint tiny" id="partyHint"></p>
+    </form>
+
+    <div class="card note-card">
+      <h3>Что учтено и что нет</h3>
+      <p class="hint">Считаем базовую пошлину по шкале и фиксированные суммы из статей 333.19 и 333.21. Не учитываем льготы и освобождения (ст. 333.35-333.37 НК РФ), отсрочку и уменьшение по имущественному положению (ст. 333.41), сочетание требований в одном иске и специальные правила ст. 333.20 и 333.22: при нескольких требованиях пошлины обычно суммируются, проверяйте по тексту статьи.</p>
+      <p class="hint">Не включены отдельные виды: заявления по третейским судам и иностранным решениям, обособленные споры в банкротстве, заявления третьих лиц, кассационные и надзорные жалобы по особым категориям. Их пошлину смотрите по тексту статей.</p>
+      <p class="hint">В статьях плательщики разделены на физических лиц и организации. Как применять это к индивидуальному предпринимателю в вашем деле, проверьте по тексту статьи и практике суда.</p>
+      <p class="hint">Расчёт ведётся до копейки. Правила округления в тексте статей не найдены, поэтому точную сумму к уплате уточняйте в реквизитах суда.</p>
+    </div>
+
+    <div class="card note-card">
+      <h3>Источники</h3>
+      <ul class="hint">
+        <li><a href="https://www.consultant.ru/document/cons_doc_LAW_28165/1cfcdcc5936cbfc3ea52f964201a1bb6002be313/" target="_blank" rel="noopener">Ст. 333.19 НК РФ (КонсультантПлюс)</a></li>
+        <li><a href="https://pravo.ppt.ru/kodeks/nk/st-333.21" target="_blank" rel="noopener">Ст. 333.21 НК РФ</a></li>
+        <li><a href="https://base.garant.ru/10900200/6960013a0e7c5c8690975fc0ec0c7eaa/" target="_blank" rel="noopener">Ст. 333.19 НК РФ (Гарант)</a></li>
+      </ul>
+      <p class="hint tiny">Сверка ставок с текстом статей - 30.09.2026. Законодательство меняется: перед подачей проверьте действующую редакцию.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="card result" id="res" aria-live="polite"></div>
+
+    <div class="card note-card">
+      <h3>Складываете доли или суммы дробей?</h3>
+      <p class="hint">В <a href="drobi.html?from=poshlina">калькуляторе дробей</a> выражение вводится одной строкой: <b>1/2 + 1/3 + 1/6</b> - сразу результат в виде дроби, смешанного числа и процентов. Удобно для долей в наследстве и общей собственности.</p>
+    </div>
+
+    <div class="card note-card">
+      <h3>Другие калькуляторы</h3>
+      <ul class="hint">
+        <li><a href="https://kalkulyator-nalogov.github.io/?from=kalkulyator-yurista" target="_blank" rel="noopener">Налоги по режимам</a> - УСН, ОСН, ПСН, самозанятые.</li>
+        <li><a href="https://kalkulyator-nalogov.github.io/patent.html?from=kalkulyator-yurista" target="_blank" rel="noopener">Стоимость патента по региону</a></li>
+        <li><a href="https://kalkulyator-soc-kontrakta.github.io/?from=kalkulyator-yurista" target="_blank" rel="noopener">Соцконтракт</a> - расчёт и бизнес-план.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="foot">
+  <div class="container">
+    Калькулятор - справочный инструмент, не юридическая консультация. Перед подачей сверьтесь с действующей редакцией Налогового кодекса РФ. Проверка ставок: 30.09.2026.
+  </div>
+</footer>
+
+<noscript><div class="container"><p class="hint">Для расчёта нужен включённый JavaScript.</p></div></noscript>
+<script src="duty.js"></script>
+<script src="duty-ui.js"></script>
+</body>
+</html>

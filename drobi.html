@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор дробей онлайн - сложение многих дробей в одну строку</title>
+<meta name="description" content="Калькулятор дробей: вводите выражение одной строкой (1/2 + 1/3 + 1/6), сразу получаете дробь, смешанное число, десятичную запись и проценты. Удобно для долей в наследстве и общей собственности.">
+<meta name="keywords" content="калькулятор дробей, сложение дробей, сложить много дробей, доли в наследстве, смешанные числа, дроби онлайн">
+<link rel="canonical" href="https://kalkulyator-yurista.github.io/drobi.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор дробей - много дробей в одну строку">
+<meta property="og:description" content="1/2 + 1/3 + 1/6 - результат сразу: дробь, смешанное число, проценты. Бесплатно.">
+<meta property="og:url" content="https://kalkulyator-yurista.github.io/drobi.html">
+<link rel="stylesheet" href="style.css">
+<style>
+  .nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--tx);text-decoration:none;font-size:14px}
+  .nav a.on{background:var(--ac);color:var(--ac-ink);border-color:var(--ac)}
+  #expr{font-size:22px;padding:14px 16px;font-variant-numeric:tabular-nums}
+  .big{font-size:40px;font-weight:700;letter-spacing:-.5px;margin:2px 0 10px;word-break:break-all}
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+  .kv span{color:var(--mut)}
+  .kv b{text-align:right;word-break:break-all;font-variant-numeric:tabular-nums}
+  .ops{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .ops button{padding:8px 14px;font-size:16px;min-width:44px}
+  footer.foot a{color:var(--mut);text-decoration:underline}
+  .err{color:var(--bad)}
+  .ok{color:var(--ok)}
+</style>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Калькулятор дробей","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"},"description":"Сложение, вычитание, умножение и деление обыкновенных дробей одной строкой, со скобками, смешанными числами и процентами." }
+</script>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <span class="badge">Много дробей в одной строке</span>
+    <h1>Калькулятор дробей</h1>
+    <p class="lead">Запишите всё одной строкой - хоть десять дробей подряд: <b>1/2 + 1/3 + 1/6 - 1/12</b>. Результат считается сразу, точно, без округления.</p>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="nav">
+    <a href="./">Госпошлина</a>
+    <a class="on" href="drobi.html">Калькулятор дробей</a>
+  </nav>
+<div class="layout">
+  <div>
+    <form class="card" autocomplete="off" onsubmit="return false">
+      <h2>Выражение</h2>
+      <label for="expr">Введите выражение</label>
+      <input id="expr" type="text" inputmode="text" value="1/2 + 1/3 + 1/6" spellcheck="false" autocapitalize="off" aria-describedby="help">
+      <div class="ops" aria-label="Быстрый ввод">
+        <button type="button" data-ins=" + ">+</button>
+        <button type="button" data-ins=" - ">−</button>
+        <button type="button" data-ins=" * ">×</button>
+        <button type="button" data-ins=" : ">÷</button>
+        <button type="button" data-ins="(">(</button>
+        <button type="button" data-ins=")">)</button>
+        <button type="button" id="clr">Очистить</button>
+      </div>
+      <div class="chips" style="margin-top:14px">
+        <button type="button" class="chip" data-ex="1/2 + 1/4 + 1/8 + 1/8">Доли наследников</button>
+        <button type="button" class="chip" data-ex="1 - 1/2 - 1/3">Остаток после долей</button>
+        <button type="button" class="chip" data-ex="1 1/2 + 2 3/4">Смешанные числа</button>
+        <button type="button" class="chip" data-ex="(2/3 + 3/4) : 5/6">Со скобками</button>
+      </div>
+      <p class="hint tiny" id="help">Как вводить: <b>1/2</b> без пробелов - дробь; <b>1 1/2</b> - смешанное число (целая часть, пробел, дробь); <b>:</b> или <b>÷</b> или <b>/</b> с пробелами - деление; <b>*</b> или <b>×</b> - умножение; можно скобки, десятичные (<b>0,5</b>), проценты (<b>25%</b>), числа с пробелом тысяч (<b>1 000 000</b>) и дроби из Word (<b>½</b>, <b>2¾</b>). Цепочка <b>1/2/3</b> считается слева направо, как (1/2)/3; для другого порядка ставьте скобки.</p>
+    </form>
+
+    <div class="card note-card">
+      <h3>Для юристов: доли</h3>
+      <p class="hint">Доли в праве собственности и наследственные доли удобно складывать и вычитать прямо в строке. Если сумма долей равна 1, калькулятор это отметит. Перед составлением иска или соглашения сверяйте доли с документами (свидетельства, выписка ЕГРН).</p>
+      <p class="hint">Нужно посчитать пошлину по иску о разделе имущества? Откройте <a href="./?from=drobi">калькулятор госпошлины</a>.</p>
+    </div>
+
+    <div class="card note-card">
+      <h3>Другие калькуляторы</h3>
+      <ul class="hint">
+        <li><a href="https://kalkulyator-nalogov.github.io/?from=kalkulyator-yurista" target="_blank" rel="noopener">Налоги по режимам</a></li>
+        <li><a href="https://kalkulyator-nalogov.github.io/patent.html?from=kalkulyator-yurista" target="_blank" rel="noopener">Стоимость патента по региону</a></li>
+        <li><a href="https://kalkulyator-soc-kontrakta.github.io/?from=kalkulyator-yurista" target="_blank" rel="noopener">Соцконтракт</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <div class="card result" id="res" aria-live="polite"></div>
+  </div>
+</div>
+</div>
+
+<footer class="foot">
+  <div class="container">
+    Расчёт ведётся точно, целыми числами, в вашем браузере - введённое никуда не отправляется. Справочный инструмент, не юридическая консультация.
+  </div>
+</footer>
+
+<noscript><div class="container"><p class="hint">Для расчёта нужен включённый JavaScript.</p></div></noscript>
+<script src="fractions.js"></script>
+<script src="fractions-ui.js"></script>
+</body>
+</html>
